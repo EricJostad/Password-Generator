@@ -17,6 +17,26 @@ function writePassword() {
 
 }
 
+function generatePassword(){
+  var passwordLength = parseInt(prompt("Please specify password length between 8 and 128 characters."));
+    if( passwordLength === null){
+      alert("Length must be specified.");
+      return false;
+    }   else{
+    if(passwordLength < 8){
+      alert("Password must be greater than 8 characters.");
+      return false;
+    }
+    if(passwordLength > 128){
+      alert("Password must be less than 128 characters.");
+      return false;
+    }
+}
+
+  var password = "";
+  var possibleChar = uppCase;
+
+}
 
 // Add event listener to generate button
 
