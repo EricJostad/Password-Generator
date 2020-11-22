@@ -1,8 +1,8 @@
 // Assignment Code
-var uppCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var lowCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var num = ["1","2","3","4","5","6","7","8","9","0"];
-var specChar = ["!","@","#","$","%","^","&","*","(",")","_","+","?"];  
+var uppCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowCase = "abcdefghijklmnopqrstuvwxyz";
+var num = "1234567890";
+var specChar = "!@#$%^&*()+_?";  
 var password = generatePassword();
 
 var generateBtn = document.querySelector("#generate");
@@ -19,43 +19,49 @@ function writePassword() {
 
 function generatePassword(){
   var passwordLength = parseInt(prompt("Please specify password length between 8 and 128 characters."));
-    if( passwordLength == ""){
+    if( passwordLength === ""){
       alert("Length must be specified.");
-      return false;
+      return ("Please try again.");
     }   else{
     if(passwordLength < 8){
       alert("Password must be greater than 8 characters.");
-      return false;
+      return ("Please try again.");
     }
     if(passwordLength > 128){
       alert("Password must be less than 128 characters.");
-      return false;
+      return ("Please try again.");
     }
-}
+  }
 
   var password = "";
-  var possibleChar = uppCase;
+  var possibleChar = "";
 
   var includeuppCase = confirm("Should uppercase letters be included?");
     if(includeuppCase){ 
-      possibleChar = possibleChar.concat(uppCase);
+      possibleChar = possibleChar + uppCase;
     }
 
   var includelowCase = confirm("Should lowercase letters be included?");
     if(includelowCase){ 
-    possibleChar = possibleChar.concat(lowCase);
+    possibleChar = possibleChar + lowCase;
     }
   var includenum = confirm("Should numbers be included?");
   if(includenum){ 
-    possibleChar = possibleChar.concat(num);
+    possibleChar = possibleChar + num;
     }
   var includespecChar = confirm("Should special characters be included?");
   if(includespecChar){ 
-    possibleChar = possibleChar.concat(specChar);
+    possibleChar = possibleChar + specChar;
     }
+
+  for (var i = 0; i < passwordLength; i++){
+    var random = Math.floor(Math.random() * possibleChar.length);
+    password = password + possibleChar[random];
+  } 
+    
+  return password;
 
 }
 
 // Add event listener to generate button
-
 generateBtn.addEventListener("click", writePassword);
