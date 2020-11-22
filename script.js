@@ -19,7 +19,7 @@ function writePassword() {
 
 function generatePassword(){
   var passwordLength = parseInt(prompt("Please specify password length between 8 and 128 characters."));
-    if( passwordLength === null){
+    if( passwordLength == ""){
       alert("Length must be specified.");
       return false;
     }   else{
@@ -35,6 +35,24 @@ function generatePassword(){
 
   var password = "";
   var possibleChar = uppCase;
+
+  var includeuppCase = confirm("Should uppercase letters be included?");
+    if(includeuppCase){ 
+      possibleChar = possibleChar.concat(uppCase);
+    }
+
+  var includelowCase = confirm("Should lowercase letters be included?");
+    if(includelowCase){ 
+    possibleChar = possibleChar.concat(lowCase);
+    }
+  var includenum = confirm("Should numbers be included?");
+  if(includenum){ 
+    possibleChar = possibleChar.concat(num);
+    }
+  var includespecChar = confirm("Should special characters be included?");
+  if(includespecChar){ 
+    possibleChar = possibleChar.concat(specChar);
+    }
 
 }
 
