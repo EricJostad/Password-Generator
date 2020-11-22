@@ -4,27 +4,15 @@ var lowCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","
 var num = ["1","2","3","4","5","6","7","8","9","0"];
 var specChar = ["!","@","#","$","%","^","&","*","(",")","_","+","?"];  
 var password = generatePassword();
-var passwordText = document.querySelector("#password");
 
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-  var passwordLength = document.getElementById().value; 
-  //possible password combination values
-
-  for(var i = 0; i <= passwordLength; i++){
-      password = password + uppCase.charAt(Math.floor(Math.random() * Math.floor(uppCase.length - 1)))
-      + lowCase.charAtcharAt(Math.floor(Math.random() * Math.floor(lowCase.length - 1))) + 
-      num.charAtcharAt(Math.floor(Math.random() * Math.floor(num.length - 1))) + 
-      specChar.charAtcharAt(Math.floor(Math.random() * Math.floor(specChar.length - 1)));
-  }
-
-  //passwordText.value = password;
-  document.getElementById("display").value = password;
-
-  document.getElementById("lastNums").innerHTML += password + "</br>";
+  passwordText.value = password;
 
 }
 
