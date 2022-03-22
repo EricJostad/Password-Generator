@@ -1,24 +1,24 @@
 // Assignment Code
-var uppCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowCase = "abcdefghijklmnopqrstuvwxyz";
-var num = "1234567890";
-var specChar = "!@#$%^&*()+_?";
-var password = generatePassword();
+let uppCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let lowCase = "abcdefghijklmnopqrstuvwxyz";
+let num = "1234567890";
+let specChar = "!@#$%^&*()+_?";
+let password = generatePassword();
 
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
 
 function generatePassword() {
-  var passwordLength = parseInt(prompt("Please specify password length between 8 and 128 characters."));
+  let passwordLength = parseInt(prompt("Please specify password length between 8 and 128 characters."));
   if (passwordLength == "") {
     alert("Length must be specified.");
     return ("Please try again.");
@@ -32,31 +32,31 @@ function generatePassword() {
     return ("Please try again.");
   }
 
-  var password = "";
-  var possibleChar = "";
+  let password = "";
+  let possibleChar = "";
 
-  var includeuppCase = confirm("Should uppercase letters be included?");
+  let includeuppCase = confirm("Should uppercase letters be included?");
   if (includeuppCase) {
     possibleChar = possibleChar + uppCase;
   }
 
-  var includelowCase = confirm("Should lowercase letters be included?");
+  let includelowCase = confirm("Should lowercase letters be included?");
   if (includelowCase) {
     possibleChar = possibleChar + lowCase;
   }
 
-  var includenum = confirm("Should numbers be included?");
+  let includenum = confirm("Should numbers be included?");
   if (includenum) {
     possibleChar = possibleChar + num;
   }
 
-  var includespecChar = confirm("Should special characters be included?");
+  let includespecChar = confirm("Should special characters be included?");
   if (includespecChar) {
     possibleChar = possibleChar + specChar;
   }
 
   for (var i = 0; i < passwordLength; i++) {
-    var random = Math.floor(Math.random() * possibleChar.length);
+    let random = Math.floor(Math.random() * possibleChar.length);
     password = password + possibleChar[random];
   }
 
