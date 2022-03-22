@@ -45,8 +45,8 @@ function generatePassword() {
     possibleChar = possibleChar + lowCase;
   }
 
-  let includenum = confirm("Should numbers be included?");
-  if (includenum) {
+  let includeNum = confirm("Should numbers be included?");
+  if (includeNum) {
     possibleChar = possibleChar + num;
   }
 
