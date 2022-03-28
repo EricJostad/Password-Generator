@@ -19,10 +19,7 @@ function writePassword() {
 
 function generatePassword() {
   let passwordLength = parseInt(prompt("Please specify password length between 8 and 128 characters."));
-  if (passwordLength == "") {
-    alert("Length must be specified.");
-    return ("Please try again.");
-  }
+  if (passwordLength = "") return alert("Length must be specified - please try again.");
   if (passwordLength < 8) {
     alert("Password must be greater than 8 characters.");
     return ("Please try again.");
