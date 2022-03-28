@@ -7,7 +7,6 @@ let password = generatePassword();
 
 let generateBtn = document.querySelector("#generate");
 
-
 // Write password to the #password input
 function writePassword() {
   let password = generatePassword();
@@ -19,7 +18,7 @@ function writePassword() {
 
 function generatePassword() {
   let passwordLength = parseInt(prompt("Please specify password length between 8 and 128 characters."));
-  if (passwordLength = "") {
+  if (passwordLength == "") {
     alert("Length must be specified.");
     return "Please try again.";
   }
