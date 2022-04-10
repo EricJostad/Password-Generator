@@ -21,7 +21,7 @@ This project is created with:
 - [Javascript](https://www.javascript.com/) 
 
 ## Updates planned
-- Update the input method so that the password parameters are taken in via form or text-box rather than confirms & prompts.
+- Update the input method so that the password parameters are taken in via form or text-box rather than confirms & prompts, possibly via SweetAlert2.
 - Update styling to provide the user with a greater visual experience upon visiting the site.
 
 ## Author
