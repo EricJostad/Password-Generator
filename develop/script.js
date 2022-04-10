@@ -1,3 +1,8 @@
+// // // Sweetalert2 import 
+// const Swal = require('sweetalert2')
+
+// window.Swal = Swal;
+
 // Assignment Code
 let uppCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowCase = "abcdefghijklmnopqrstuvwxyz";
