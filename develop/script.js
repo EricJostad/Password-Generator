@@ -1,8 +1,3 @@
-// // // Sweetalert2 import 
-// const Swal = require('sweetalert2')
-
-// window.Swal = Swal;
-
 // Assignment Code
 let uppCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowCase = "abcdefghijklmnopqrstuvwxyz";
@@ -27,12 +22,9 @@ function generatePassword() {
     alert("Length must be specified.");
     return "Please try again.";
   }
-  if (passwordLength < 8) {
-    alert("Password must be greater than 8 characters.");
-    return "Please try again.";
-  }
-  if (passwordLength > 128) {
-    alert("Password must be less than 128 characters.");
+
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Password must be greater than 8 characters or less than 128 characters.");
     return "Please try again.";
   }
 
