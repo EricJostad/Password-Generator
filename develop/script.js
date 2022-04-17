@@ -3,7 +3,6 @@ let uppCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowCase = "abcdefghijklmnopqrstuvwxyz";
 let num = "1234567890";
 let specChar = "!@#$%^&*()+_?";
-let password = generatePassword();
 
 let generateBtn = document.querySelector("#generate");
 
